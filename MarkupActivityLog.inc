@@ -15,8 +15,8 @@
 					<?php if ($change->type == 'FieldtypeTextarea'):?>
 						<a href="<?php echo $config->urls->admin;?>activity-log-service/<?php echo $change->attrs; ?>" class="view-diff"><?php echo __('View Changes');?></a>
 					<? else: ?>
-						<?php echo __("from ");?> <del class='diffmod'><?php echo $change->old;?></del>
-						<?php echo __("to ");?> <ins class='diffmod'><?php echo $change->new;?></ins>
+						<?php echo __("from ");?> <del class='diffmod<?php if (!$change->old) echo ' null'?>'><?php echo $change->old? $change->old:'null'?></del>
+						<?php echo __("to ");?> <ins class='diffmod<?php if (!$change->new) echo ' null'?>'><?php echo $change->new? $change->new:'null'?></ins>
 					<? endif; ?>
 				</li>
 				<? endforeach; ?>

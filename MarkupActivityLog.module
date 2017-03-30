@@ -290,13 +290,13 @@ class MarkupActivityLog extends WireData implements Module, ConfigurableModule {
             $out = "";
             foreach ($field as $p){
                 if ($p instanceof User){ 
-                    $out .= $this->getUserFields($p) . ', ';
+                    $out .= $this->getUserFields($p) . '|';
                 
                 } else {
-                    $out .= $this->formatPageTitle($p);
+                    $out .= $this->formatPageTitle($p) . '|';
                 }
           }
-          return rtrim($out, ', ');
+          return rtrim($out, '|');
         
         } else {
             return $this->formatPageTitle($p);
