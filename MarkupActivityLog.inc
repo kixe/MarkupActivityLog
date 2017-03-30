@@ -4,11 +4,9 @@
 			<dt class="date-stamp"><i class="fa fa-calendar"></i> <?php echo $entry->date;?></dt>
 			<dd class="date-stamp">&nbsp;</dd>
 		<? endif; ?>
-		<dt><i class="fa fa-clock-o"></i> <?php echo $entry->time;?></dt>
+		<dt><i class="fa fa-clock-o"></i> <?php echo $entry->time;?><br><?php echo __("by ");?><?php echo $entry->user_fields;?></dt>
 		<dd>
-			<ul>
-				<li><?php echo $entry->user_fields;?></li>
-				
+			<ul>				
 				<?php foreach ($entry->changes as $change):?>
 				<li>
 					<?php echo __("Changed ");?> <b><?php echo $change->field ;?></b>
